@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Baloo+2:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== BASE RESET ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: #f5f2ec;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #273635;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #ede8df; }
+::-webkit-scrollbar-thumb { background: #577047; border-radius: 99px; }
+
+/* ===================== CSS VARIABLES ===================== */
+:root {
+  --charcoal:  #4e5650;
+  --deep:      #273635;
+  --sage:      #5d814c;
+  --forest:    #577047;
+  --cream:     #f5f2ec;
+  --parchment: #ede8df;
+  --sand:      #d8d0c0;
+  --stone:     #9a9590;
+}
+
+/* ===================== KEYFRAMES ===================== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes heroBgShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92) translateY(24px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes bounceDot {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes imageReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+@keyframes numberCount {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmerSlide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes rotateSlowly {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes scaleBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.03); }
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal       { opacity: 0; transform: translateY(40px);  transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94); }
+.reveal-left  { opacity: 0; transform: translateX(-50px); transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94); }
+.reveal-right { opacity: 0; transform: translateX(50px);  transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94); }
+.reveal-scale { opacity: 0; transform: scale(0.9);        transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94); }
+
+.reveal.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-scale.revealed { opacity: 1; transform: none; }
+
+.d1 { transition-delay: 0.05s !important; }
+.d2 { transition-delay: 0.12s !important; }
+.d3 { transition-delay: 0.19s !important; }
+.d4 { transition-delay: 0.26s !important; }
+.d5 { transition-delay: 0.33s !important; }
+.d6 { transition-delay: 0.40s !important; }
+
+/* ===================== MARQUEE ===================== */
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+/* ===================== MODAL ===================== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(39,54,53,0.75);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-card { animation: modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+
+/* ===================== CARD LIFT ===================== */
+.card-lift { transition: transform 0.35s cubic-bezier(.25,.46,.45,.94), box-shadow 0.35s ease; }
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(39,54,53,0.16);
+}
+
+/* ===================== IMAGE OVERLAY ===================== */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(39,54,53,0.65) 0%, transparent 60%);
+  pointer-events: none;
+}
+.img-overlay img {
+  transition: transform 0.6s cubic-bezier(.25,.46,.45,.94);
+  width: 100%; height: 100%; object-fit: cover;
+}
+.img-overlay:hover img { transform: scale(1.06); }
+
+/* ===================== PRODUCT IMAGE ===================== */
+.product-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.product-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.product-img:hover img { transform: scale(1.08); }
+
+/* ===================== SHIMMER BUTTON ===================== */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+}
+.btn-shimmer:hover::after { animation: shimmerSlide 0.6s ease; }
+
+/* ===================== SECTION LABEL ===================== */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.25rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--sage);
+}
+
+.section-label-light {
+  color: #7da060;
+}
+.section-label-light::before { background: #7da060; }
+
+/* ===================== DIVIDER ===================== */
+.divider-leaf {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 3rem;
+  max-width: 160px;
+}
+.divider-leaf::before,
+.divider-leaf::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+/* ===================== GRAIN OVERLAY ===================== */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ===================== HERO IMAGE MASK ===================== */
+.hero-image-mask {
+  clip-path: polygon(8% 0%, 100% 0%, 100% 88%, 92% 100%, 0% 100%, 0% 12%);
+}
+
+/* ===================== DIAGONAL SECTION ===================== */
+.diagonal-top {
+  clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -3vw;
+  padding-top: calc(3vw + 4rem);
+}
+.diagonal-bottom {
+  clip-path: polygon(0 0%, 100% 0%, 100% 95%, 0% 100%);
+  padding-bottom: calc(3vw + 4rem);
+}
+
+/* ===================== GLASS CARD ===================== */
+.glass-card {
+  background: rgba(245,242,236,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245,242,236,0.15);
+}
+
+/* ===================== HOVER UNDERLINE ===================== */
+.hover-line {
+  position: relative;
+  display: inline-block;
+}
+.hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1.5px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.hover-line:hover::after { width: 100%; }
+
+/* ===================== SPICE METER ===================== */
+.spice-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.spice-dot.active  { background: #a83535; }
+.spice-dot.inactive { background: var(--sand); }
+
+/* ===================== TAG PILL ===================== */
+.tag-pill {
+  display: inline-block;
+  font-family: 'Baloo 2', cursive;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* ===================== FOCUS STYLES ===================== */
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
