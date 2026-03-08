@@ -40,28 +40,27 @@ const TIMELINE = [
   },
 ];
 
+// ── Team images are served from /public/team/ folder ──────────────────────────
+// Place your images as: public/team/himesh.jpg, public/team/ajith.jpg, public/team/diwakar.jpg
 const TEAM = [
   {
-    name: "Amma",
-    role: "Founder & Chief Pickle Maker",
-    yrs: "40+ years",
-    img: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&q=80",
-    desc: "Every recipe in production was written by Amma's hand. She personally tastes and approves every single batch. If it doesn't pass her standard, it doesn't ship."
+    name: "Himesh Krishna",
+    role: "Founder",
+    img: "/himesh.jpeg",
+    desc: "Himesh leads the vision behind RecipeRaja — bringing authentic South Indian food to tables across the world without compromising on a single ingredient or step."
   },
   {
-    name: "Operations Head",
-    role: "Quality & Logistics",
-    yrs: "10 years",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+    name: "Ajith Reddy",
+    role: "Co-Founder",
+    img: "/ajith.png",
+    desc: "Ajith drives the product and customer experience. Every dish that goes out carries his stamp of approval — he believes the food should speak before anything else does."
+  },
+  {
+    name: "Diwakar Yadav",
+    role: "Head of Operations & Logistics",
+    img: "/diwakar.jpeg",
     desc: "Manages sourcing, production scheduling, and all dispatch logistics. His personal rule: never ship anything he wouldn't eat himself at dinner."
-  },
-  {
-    name: "Production Head",
-    role: "South Indian Products",
-    yrs: "6 years",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
-    desc: "Leads all fresh batter and powder production. Brings years of home-cooking tradition to every batch of idli batter and sambar powder."
-  },
+  }
 ];
 
 const VALUES = [
@@ -159,9 +158,9 @@ export default function AboutPage() {
               </div>
               <div className="mt-8 pl-5" style={{ borderLeft: "3px solid #5d814c" }}>
                 <p className="font-display italic text-xl leading-snug" style={{ color: "#273635" }}>
-                  "There is no machine that can tell when a pickle is ready. My hands have been doing this for 40 years. They just know."
+                  "There is no machine that can tell when a pickle is ready. The process knows. You just have to trust it and not hurry it."
                 </p>
-                <div className="font-accent font-bold text-sm mt-2" style={{ color: "#5d814c" }}>— Amma, Founder</div>
+                <div className="font-accent font-bold text-sm mt-2" style={{ color: "#5d814c" }}>— RecipeRaja Kitchen</div>
               </div>
             </div>
           </div>
@@ -185,7 +184,6 @@ export default function AboutPage() {
           </div>
 
           <div className="relative">
-            {/* Vertical line */}
             <div
               className="absolute left-6 top-0 bottom-0 w-px"
               style={{ background: "linear-gradient(to bottom,#5d814c,#d8d0c0)" }}
@@ -193,7 +191,6 @@ export default function AboutPage() {
             <div className="space-y-8">
               {TIMELINE.map(({ year, title, desc }, i) => (
                 <div key={i} className={`reveal d${Math.min(i + 1, 6)} flex gap-8 pl-16 relative`}>
-                  {/* Dot */}
                   <div
                     className="absolute flex items-center justify-center"
                     style={{
@@ -241,19 +238,18 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TEAM.map(({ name, role, yrs, img, desc }, i) => (
+            {TEAM.map(({ name, role, img, desc }, i) => (
               <div
                 key={i}
                 className={`reveal-scale d${i + 1} card-lift rounded-2xl overflow-hidden bg-white`}
                 style={{ border: "1px solid rgba(216,208,192,0.5)" }}
               >
-                <div className="h-56 overflow-hidden">
-                  <img src={img} alt={name} className="w-full h-full object-cover" />
+                <div className="h-80 overflow-hidden">
+                  <img src={img} alt={name} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="p-6">
                   <div className="font-display font-bold text-xl mb-0.5" style={{ color: "#273635" }}>{name}</div>
-                  <div className="font-accent font-bold text-sm mb-0.5" style={{ color: "#5d814c" }}>{role}</div>
-                  <div className="text-xs mb-4" style={{ color: "#9a9590" }}>{yrs} experience</div>
+                  <div className="font-accent font-bold text-sm mb-3" style={{ color: "#5d814c" }}>{role}</div>
                   <p className="text-sm leading-relaxed" style={{ color: "#4e5650" }}>{desc}</p>
                 </div>
               </div>
@@ -308,8 +304,6 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { t: "FSSAI Licensed",     d: "License No. 12345678901234", path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
-              { t: "GST Registered",     d: "No. 33XXXXX0000X1Z5",        path: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
               { t: "Zero Preservatives", d: "100% natural, always",       path: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
               { t: "Hygienic Packaging", d: "Food-grade glass jars",      path: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
             ].map(({ t, d, path }, i) => (

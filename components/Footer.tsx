@@ -51,7 +51,7 @@ export default function Footer() {
               {[
                 { label: "+91 95609 77219", sub: "WhatsApp & Calls", href: "https://wa.me/919560977219" },
                 { label: "orders@reciperaja.in", sub: "Email orders", href: "mailto:orders@reciperaja.in" },
-                { label: "Gurgoan, Haryana", sub: "Pickup by appointment", href: "#" },
+                { label: "Gurugram, Haryana", sub: "Pickup by appointment", href: "#" },
               ].map(({ label, sub, href }) => (
                 <a key={label} href={href} className="block group">
                   <div className="text-brand-cream text-sm font-medium group-hover:text-brand-sageLight transition">{label}</div>
@@ -65,7 +65,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-brand-stone">
           <span>© 2024 RecipeRaja. All rights reserved.</span>
-          <span>Made with tradition in Gurgoan, India</span>
+          <span>Made with tradition in Gurugram, India</span>
         </div>
       </div>
     </footer>
