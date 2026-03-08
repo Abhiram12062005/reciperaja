@@ -258,7 +258,7 @@ export default function ComingSoonClient({ launchDate }: Props) {
 
         {/* ── Footer ── */}
         <p className="text-xs" style={{ color: "#4e5650" }}>
-          reciperaja.in · Chennai · Made with care, zero shortcuts
+          reciperaja.com · Gurugram · Made with care, zero shortcuts
         </p>
       </div>
     </div>
