@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // ── IMAGES ───────────────────────────────────────────────────────────────────
 const HERO_BG   = "https://images.unsplash.com/photo-1630383249896-424e482df921?w=1600&q=85";
-const STORY_IMG = "https://images.stockcake.com/public/d/0/2/d022f4e9-302f-4e09-869d-9f98fd8b163d_large/chef-seasoning-food-stockcake.jpg";
+const STORY_IMG = "https://static.toiimg.com/photo/117413547/117413547.jpg";
 
 // ── HOW WE COOK ───────────────────────────────────────────────────────────────
 const PROCESS = [
