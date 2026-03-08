@@ -60,7 +60,7 @@ const LUNCH = [
 const CHICKEN = [
   { name:"Andhra Chicken Curry",  tag:"Fiery",        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ulg3w0NqbnxNTxtewVnbWpO6yvn8KvrgXA&s" },
   { name:"Chicken Chettinad",     tag:"Aromatic",     img:"https://www.whiskaffair.com/wp-content/uploads/2020/09/Chicken-Chettinad-Curry-2-3.jpg" },
-  { name:"Natu Kodi Pulusu",      tag:"Country Hen",  img:"hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwjDrD7Oh3cjfHw6pUU77wWmlDT_t7JxGuZg&s" },
+  { name:"Natu Kodi Pulusu",      tag:"Country Hen",  img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwjDrD7Oh3cjfHw6pUU77wWmlDT_t7JxGuZg&s" },
   { name:"Chicken Sukka",         tag:"Dry Roast",    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT18k1j1okvaMEJdv21xMeHeHBpW3HSny6gug&s" },
   { name:"Chicken Ghee Roast",    tag:"Mangalore",    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dFN8gTRM7Q1uryLeTfzCixJbK84eq97npQ&s" },
   { name:"Chicken Varuval",       tag:"Tamil Nadu",   img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3jXF-2ChebVBKiffYNoLqYZmvt-RBdBsKcw&s" },
@@ -302,7 +302,7 @@ export default function MenuPage() {
       <section className="py-12" style={{ background: "#577047" }}>
         <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center reveal">
           <h2 className="font-display font-black text-white mb-2" style={{ fontSize: "clamp(1.4rem,3vw,2rem)" }}>
-            76 Dishes. All South Indian. All Handmade.
+            200+ Dishes. All South Indian. All Handmade.
           </h2>
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
             Breakfast · Lunch & Mains · Chicken · Seafood & Mutton
