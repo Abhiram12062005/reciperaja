@@ -44,16 +44,16 @@ const TIMELINE = [
 // Place your images as: public/team/himesh.jpg, public/team/ajith.jpg, public/team/diwakar.jpg
 const TEAM = [
   {
-    name: "Himesh Krishna",
-    role: "Founder",
-    img: "/himesh.jpeg",
-    desc: "Himesh leads the vision behind RecipeRaja — bringing authentic South Indian food to tables across the world without compromising on a single ingredient or step."
-  },
-  {
     name: "Ajith Reddy",
-    role: "Co-Founder",
+    role: "Founder",
     img: "/ajith.png",
     desc: "Ajith drives the product and customer experience. Every dish that goes out carries his stamp of approval — he believes the food should speak before anything else does."
+  },
+  {
+    name: "Himesh Krishna",
+    role: "Co-Founder",
+    img: "/himesh.jpeg",
+    desc: "Himesh leads the vision behind RecipeRaja — bringing authentic South Indian food to tables across the world without compromising on a single ingredient or step."
   },
   {
     name: "Diwakar Yadav",
