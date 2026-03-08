@@ -13,10 +13,10 @@ const STORY_IMG = "https://static.toiimg.com/photo/117413547/117413547.jpg";
 const PROCESS = [
   { n:"01", title:"Source Real Ingredients",
     desc:"Every vegetable, lentil, spice and protein comes from farms and suppliers our family has trusted for decades. Nothing generic, nothing unnamed.",
-    img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&q=80" },
+    img:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSO6-DoschqhAmcs-PGHzmFd9ZGOWJ_IIZIk5YpVZEu7vimKzpw" },
   { n:"02", title:"Prepare Everything by Hand",
     desc:"Grinding, chopping, soaking, fermenting — every step done by hand in our Chennai kitchen. The same way it has been done here since 1982.",
-    img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" },
+    img:"https://img.freepik.com/premium-photo/heartwarming-moments-indian-woman-preparing-dinner-her-family-kitchen_209190-263494.jpg?semt=ais_hybrid&w=740&q=80" },
   { n:"03", title:"Roast & Grind Spices Fresh",
     desc:"Our masala blends are dry-roasted on an open flame and stone-ground fresh for every batch. No pre-mixed powders. No shortcuts in the spice work.",
     img:"https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" },
@@ -28,7 +28,7 @@ const PROCESS = [
     img:"https://www.shutterstock.com/image-photo/a-joyful-indian-man-his-600nw-2635940877.jpg" },
   { n:"06", title:"Pack & Dispatch Within 24hrs",
     desc:"Food-grade glass jars, honest FSSAI labelling, careful packing. Dispatched within 24 hours of final approval — so what arrives is as fresh as possible.",
-    img:"https://image.made-in-china.com/318f0j00BavGcYHsbqke/631-mp4.webp" },
+    img:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR057A4EraUBRZq3sWgWiaahnsUmeH48GZXXMZ-8C7RpIjFSa8G" },
 ];
 
 // ── FEATURED PICKLES ─────────────────────────────────────────────────────────
@@ -71,21 +71,16 @@ const FEATURED_RECIPES = [
 ];
 
 // ── TESTIMONIALS ──────────────────────────────────────────────────────────────
-const AVATARS = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
-  "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
-];
+const AVATARS = "https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png"
 
 const TESTIMONIALS = [
-  { name:"Priya Nair",    loc:"London, UK",      stars:5, avatar:AVATARS[0],
+  { name:"Priya Nair",    loc:"London, UK",      stars:5, avatar:AVATARS,
     text:"This is the first time in three years abroad that South Indian food has actually tasted like home. Not close — exactly like home. RecipeRaja is the real thing." },
-  { name:"Ramesh Babu",   loc:"Hyderabad, India", stars:5, avatar:AVATARS[1],
+  { name:"Ramesh Babu",   loc:"Hyderabad, India", stars:5, avatar:AVATARS,
     text:"The Chettinad chicken and gongura pickle together — this is what a proper South Indian meal is supposed to feel like. Absolutely no compromise on flavour." },
-  { name:"Sunita Sharma", loc:"Mumbai, India",    stars:5, avatar:AVATARS[2],
+  { name:"Sunita Sharma", loc:"Mumbai, India",    stars:5, avatar:AVATARS,
     text:"Ordered the idli batter, sambar, and chicken pickle together. Everything was consistent, bold, and made with care. Every order since has been just as good." },
-  { name:"Kavitha Rajan", loc:"Singapore",        stars:5, avatar:AVATARS[3],
+  { name:"Kavitha Rajan", loc:"Singapore",        stars:5, avatar:AVATARS,
     text:"My daughter opened the parcel, took one smell, and said it was exactly like Chennai. That smell — the spices, the oil, the realness — cannot be faked. RecipeRaja doesn't fake it." },
 ];
 
@@ -138,7 +133,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-3 gap-6" style={{ animation:"fadeUp .6s .38s ease both" }}>
-              {[["76+","Dishes & Recipes"],["10,000+","Happy Customers"],["40+","Years of Cooking"]].map(([n,l]) => (
+              {[["200+","Dishes & Recipes"],["10,000+","Happy Customers"],["40+","Years of Cooking"]].map(([n,l]) => (
                 <div key={l}>
                   <div className="font-display font-black text-white" style={{ fontSize:"clamp(1.8rem,3.2vw,2.4rem)" }}>{n}</div>
                   <div className="text-xs font-accent tracking-widest uppercase mt-0.5" style={{ color:"#9a9590" }}>{l}</div>
@@ -201,7 +196,7 @@ export default function HomePage() {
                 <div className="font-accent text-sm font-bold mt-3" style={{ color:"#5d814c" }}>— RecipeRaja Kitchen</div>
               </div>
               <div className="grid grid-cols-3 gap-3 mt-10">
-                {[["76+","Dishes"],["12","Countries"],["0%","Preservatives"]].map(([n,l]) => (
+                {[["200+","Dishes"],["12","Countries"],["0%","Preservatives"]].map(([n,l]) => (
                   <div key={l} className="text-center py-4 rounded-xl" style={{ background:"#ede8df" }}>
                     <div className="font-display font-black text-2xl" style={{ color:"#577047" }}>{n}</div>
                     <div className="text-xs font-accent mt-0.5 tracking-wide" style={{ color:"#9a9590" }}>{l}</div>
@@ -427,7 +422,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { n:"76+",  l:"Dishes on Our Menu",  d:"Breakfast, lunch, curries, pickles & more" },
+              { n:"200+",  l:"Dishes on Our Menu",  d:"Breakfast, lunch, curries, pickles & more" },
               { n:"0%",   l:"Artificial Additives", d:"No preservatives, no colour, no shortcuts" },
               { n:"100%", l:"Made by Hand",         d:"Every dish prepared in our Chennai kitchen" },
               { n:"12",   l:"Countries We Reach",   d:"From Chennai to tables worldwide" },
@@ -493,7 +488,7 @@ export default function HomePage() {
             <span className="italic" style={{ color:"#7da060" }}>Made with 40 Years of Care</span>
           </h2>
           <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color:"#c8c4bc" }}>
-            76+ authentic dishes — breakfast, curries, pickles, biryanis — prepared by hand in Chennai and delivered anywhere in India within 3 days.
+            200+ authentic dishes — breakfast, curries, pickles, biryanis — prepared by hand in Chennai and delivered anywhere in India within 3 days.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <HomeOrderButton label="Order Now" />

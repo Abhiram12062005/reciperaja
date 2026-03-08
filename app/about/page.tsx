@@ -120,49 +120,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── MISSION ── */}
+      {/* ── TEAM ── */}
       <section className="py-24 lg:py-32" style={{ background: "#f5f2ec" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="reveal-left relative">
+          <div className="text-center mb-14 reveal">
+            <div className="section-label justify-center">The Team</div>
+            <h2
+              className="font-display font-black"
+              style={{ fontSize: "clamp(1.8rem,3.5vw,2.6rem)", color: "#273635" }}
+            >
+              The People Behind Every Jar
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {TEAM.map(({ name, role, img, desc }, i) => (
               <div
-                className="rounded-3xl overflow-hidden relative"
-                style={{ clipPath: "polygon(8% 0%,100% 0%,100% 88%,92% 100%,0% 100%,0% 12%)", aspectRatio: "4/5" }}
+                key={i}
+                className={`reveal-scale d${i + 1} card-lift rounded-2xl overflow-hidden bg-white`}
+                style={{ border: "1px solid rgba(216,208,192,0.5)" }}
               >
-                <img
-                  src="https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=800&q=80"
-                  alt="Pickle making process"
-                  className="w-full h-full object-cover"
-                />
+                <div className="h-80 overflow-hidden">
+                  <img src={img} alt={name} className="w-full h-full object-cover object-top" />
+                </div>
+                <div className="p-6">
+                  <div className="font-display font-bold text-xl mb-0.5" style={{ color: "#273635" }}>{name}</div>
+                  <div className="font-accent font-bold text-sm mb-3" style={{ color: "#5d814c" }}>{role}</div>
+                  <p className="text-sm leading-relaxed" style={{ color: "#4e5650" }}>{desc}</p>
+                </div>
               </div>
-            </div>
-            <div className="reveal-right">
-              <div className="section-label">Why We Exist</div>
-              <h2
-                className="font-display font-black leading-tight mb-6"
-                style={{ fontSize: "clamp(1.8rem,3.5vw,2.6rem)", color: "#273635" }}
-              >
-                Because a Pickle Made<br />
-                <span className="italic" style={{ color: "#5d814c" }}>Correctly Cannot Be Rushed</span>
-              </h2>
-              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "#4e5650" }}>
-                <p>
-                  Somewhere along the way, the word "pickle" started meaning a bottle of vinegar brine from a factory shelf. Bright colours, sharp acidity, uniform chunks. Shelf life of three years.
-                </p>
-                <p>
-                  That is not a pickle. A pickle is raw mango that has spent three weeks under open sky, slowly giving itself to oil and spice. A pickle knows what season it came from. It remembers the hands that made it.
-                </p>
-                <p>
-                  We make pickles the way they were always meant to be made. Slowly. By hand. With produce that comes from specific farmers in specific places. Nothing synthetic has ever entered our kitchen.
-                </p>
-              </div>
-              <div className="mt-8 pl-5" style={{ borderLeft: "3px solid #5d814c" }}>
-                <p className="font-display italic text-xl leading-snug" style={{ color: "#273635" }}>
-                  "There is no machine that can tell when a pickle is ready. The process knows. You just have to trust it and not hurry it."
-                </p>
-                <div className="font-accent font-bold text-sm mt-2" style={{ color: "#5d814c" }}>— RecipeRaja Kitchen</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -225,38 +211,52 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── TEAM ── */}
+ {/* ── MISSION ── */}
       <section className="py-24 lg:py-32" style={{ background: "#f5f2ec" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-14 reveal">
-            <div className="section-label justify-center">The Team</div>
-            <h2
-              className="font-display font-black"
-              style={{ fontSize: "clamp(1.8rem,3.5vw,2.6rem)", color: "#273635" }}
-            >
-              The People Behind Every Jar
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TEAM.map(({ name, role, img, desc }, i) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="reveal-left relative">
               <div
-                key={i}
-                className={`reveal-scale d${i + 1} card-lift rounded-2xl overflow-hidden bg-white`}
-                style={{ border: "1px solid rgba(216,208,192,0.5)" }}
+                className="rounded-3xl overflow-hidden relative"
+                style={{ clipPath: "polygon(8% 0%,100% 0%,100% 88%,92% 100%,0% 100%,0% 12%)", aspectRatio: "4/5" }}
               >
-                <div className="h-80 overflow-hidden">
-                  <img src={img} alt={name} className="w-full h-full object-cover object-top" />
-                </div>
-                <div className="p-6">
-                  <div className="font-display font-bold text-xl mb-0.5" style={{ color: "#273635" }}>{name}</div>
-                  <div className="font-accent font-bold text-sm mb-3" style={{ color: "#5d814c" }}>{role}</div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#4e5650" }}>{desc}</p>
-                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=800&q=80"
+                  alt="Pickle making process"
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+            </div>
+            <div className="reveal-right">
+              <div className="section-label">Why We Exist</div>
+              <h2
+                className="font-display font-black leading-tight mb-6"
+                style={{ fontSize: "clamp(1.8rem,3.5vw,2.6rem)", color: "#273635" }}
+              >
+                Because a Pickle Made<br />
+                <span className="italic" style={{ color: "#5d814c" }}>Correctly Cannot Be Rushed</span>
+              </h2>
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "#4e5650" }}>
+                <p>
+                  Somewhere along the way, the word "pickle" started meaning a bottle of vinegar brine from a factory shelf. Bright colours, sharp acidity, uniform chunks. Shelf life of three years.
+                </p>
+                <p>
+                  That is not a pickle. A pickle is raw mango that has spent three weeks under open sky, slowly giving itself to oil and spice. A pickle knows what season it came from. It remembers the hands that made it.
+                </p>
+                <p>
+                  We make pickles the way they were always meant to be made. Slowly. By hand. With produce that comes from specific farmers in specific places. Nothing synthetic has ever entered our kitchen.
+                </p>
+              </div>
+              <div className="mt-8 pl-5" style={{ borderLeft: "3px solid #5d814c" }}>
+                <p className="font-display italic text-xl leading-snug" style={{ color: "#273635" }}>
+                  "There is no machine that can tell when a pickle is ready. The process knows. You just have to trust it and not hurry it."
+                </p>
+                <div className="font-accent font-bold text-sm mt-2" style={{ color: "#5d814c" }}>— RecipeRaja Kitchen</div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </section>      
 
       {/* ── VALUES ── */}
       <section className="py-24 lg:py-32" style={{ background: "#273635" }}>
@@ -304,8 +304,26 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { t: "Zero Preservatives", d: "100% natural, always",       path: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
-              { t: "Hygienic Packaging", d: "Food-grade glass jars",      path: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
+              {
+                t: "Zero Preservatives",
+                d: "100% natural, always",
+                path: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              },
+              {
+                t: "Hygienic Packaging",
+                d: "Food-grade glass jars",
+                path: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+              },
+              {
+                t: "200+",
+                d: "dishes",
+                path: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+              },
+              {
+                t: "Freshly Prepared",
+                d: "Handmade daily",
+                path: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              }
             ].map(({ t, d, path }, i) => (
               <div
                 key={i}

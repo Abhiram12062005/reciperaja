@@ -50,7 +50,8 @@ export default function Footer() {
             <div className="space-y-4">
               {[
                 { label: "+91 95609 77219", sub: "WhatsApp & Calls", href: "https://wa.me/919560977219" },
-                { label: "orders@reciperaja.in", sub: "Email orders", href: "mailto:orders@reciperaja.in" },
+                { label: "contact@reciperaja.com", sub: "Email orders", href: "mailto:contact@reciperaja.com" },
+                { label: "office@reciperaja.com", sub: "Office Email address", href: "mailto:office@reciperaja.com" },
                 { label: "Gurugram, Haryana", sub: "Pickup by appointment", href: "#" },
               ].map(({ label, sub, href }) => (
                 <a key={label} href={href} className="block group">

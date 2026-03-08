@@ -44,9 +44,9 @@ export default function ContactPage() {
             <div className="reveal-left space-y-5">
               {[
                 { label:"WhatsApp", detail:"+91 95609 77219",   sub:"Fastest response · 9am–8pm IST", href:"https://wa.me/919560977219",        bg:"#ecf7ed", border:"#a8d5ab", tc:"#2d6a30" },
-                { label:"Email",    detail:"orders@reciperaja.in", sub:"We reply within 2 hours",    href:"mailto:orders@reciperaja.in",         bg:"#fff4ec", border:"#f5c99c", tc:"#9a4a00" },
-                { label:"Location", detail:"Chennai, Tamil Nadu",  sub:"Pickup by appointment",       href:"#",                                  bg:"#ecf2ff", border:"#b3c6f5", tc:"#2d4a9a" },
-                { label:"Hours",    detail:"9am – 8pm IST",        sub:"Monday to Saturday",          href:"#",                                  bg:"#f7ecf7", border:"#d5a8d5", tc:"#6a2d6a" },
+                { label:"Email",    detail:"contact@reciperaja.com", sub:"We reply within 2 hours",    href:"mailto:orders@reciperaja.in",         bg:"#fff4ec", border:"#f5c99c", tc:"#9a4a00" },
+                { label:"Location", detail:"Gurugram, Haryana",  sub:"Pickup by appointment",       href:"#",                                  bg:"#ecf2ff", border:"#b3c6f5", tc:"#2d4a9a" },
+                { label:"Office email",    detail:"office@reciperaja.com",        sub:"Monday to Saturday",          href:"#",                                  bg:"#f7ecf7", border:"#d5a8d5", tc:"#6a2d6a" },
               ].map(({ label, detail, sub, href, bg, border, tc }) => (
                 <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl border transition hover:shadow-md block"
