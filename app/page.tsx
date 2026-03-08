@@ -330,7 +330,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-            {FEATURED_PICKLES.map(({ tag,name,price,img,tagline },i) => (
+            {FEATURED_PICKLES.map(({ tag,name,price,img },i) => (
               <Link key={i} href="/pickles"
                 className={`reveal-scale d${i+1} card-lift group block rounded-2xl overflow-hidden bg-white`}
                 style={{ border:"1px solid rgba(216,208,192,0.5)" }}>
@@ -344,7 +344,6 @@ export default function HomePage() {
                   <span className="absolute top-3 right-3 tag-pill text-[10px] text-white" style={{ background:"rgba(39,54,53,0.8)" }}>{tag}</span>
                 </div>
                 <div className="p-4">
-                  <div className="text-xs font-accent mb-1" style={{ color:"#9a9590" }}>{tagline}</div>
                   <h3 className="font-display font-bold text-base leading-snug mb-3" style={{ color:"#273635" }}>{name}</h3>
                   <div className="flex items-center justify-between">
                     <span className="font-accent font-bold text-sm" style={{ color:"#5d814c" }}>{price}</span>
